@@ -1,4 +1,5 @@
 package p01_pathsandfiles;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -22,7 +23,12 @@ public class ReadingAFile {
 		System.out.format("subpath(0,2): %s%n", path.subpath(0,2));
 		System.out.format("getParent: %s%n", path.getParent());
 		System.out.format("getRoot: %s%n", path.getRoot());
-		//System.out.format("toRealPath: %s%n", path.toRealPath());	
+		try {
+			System.out.format("toRealPath: %s%n", path.toRealPath());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 	}
 
 }
